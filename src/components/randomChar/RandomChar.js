@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import Spinner from "../spinner/Spinner";
-import ErrorMessage from "../errorMessage/ErrorMessage";
 import useMarvelService from "../../services/MarvelService";
 import setContent from "../../utils/setContent";
 
@@ -16,7 +14,7 @@ const RandomChar = () => {
 
     return () => {
       clearInterval(timerId);
-    };
+    }; // eslint-disable-next-line
   }, []);
 
   const onCharLoaded = (char) => {
@@ -50,8 +48,8 @@ const RandomChar = () => {
   );
 };
 
-const View = ({ char }) => {
-  const { name, description, thumbnail, homepage, wiki } = char;
+const View = ({ data }) => {
+  const { name, description, thumbnail, homepage, wiki } = data;
   let imgStyle = { objectFit: "cover" };
   if (
     thumbnail ===

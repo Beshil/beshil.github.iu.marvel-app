@@ -11,7 +11,7 @@ const CharInfo = ({ charId }) => {
   const { getCharacter, clearError, process, setProcess } = useMarvelService();
 
   useEffect(() => {
-    updateChar();
+    updateChar(); // eslint-disable-next-line
   }, [charId]);
 
   const updateChar = () => {

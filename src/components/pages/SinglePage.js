@@ -13,6 +13,7 @@ const SinglePage = ({ Component, dataType }) => {
 
   useEffect(() => {
     updateData();
+    // eslint-disable-next-line
   }, [id]);
 
   const updateData = () => {
@@ -28,6 +29,9 @@ const SinglePage = ({ Component, dataType }) => {
         getCharacter(id)
           .then(onDataLoaded)
           .then(() => setProcess("confirmed"));
+        break;
+      default:
+        throw new Error("Error");
     }
   };
 

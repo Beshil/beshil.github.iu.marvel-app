@@ -30,7 +30,7 @@ const CharList = ({ onCharSelected }) => {
   const { getAllCharacters, process, setProcess } = useMarvelService();
 
   useEffect(() => {
-    onRequest(offset, true);
+    onRequest(offset, true);// eslint-disable-next-line
   }, []);
 
   const onRequest = (offset, initial) => {
