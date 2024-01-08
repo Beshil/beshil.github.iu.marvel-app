@@ -43,5 +43,6 @@
   },
   "devDependencies": {
     "sass": "^1.38.0"
-  }
+  },
+    "homepage": "https://beshil.github.io/marvel-app",
 }
