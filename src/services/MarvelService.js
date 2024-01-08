@@ -1,9 +1,9 @@
-import { useHttp } from "../hooks/http.hook";
+import { useHttp } from '../hooks/http.hook';
 
 const useMarvelService = () => {
   const { request, clearError, process, setProcess } = useHttp();
-  const _apiBase = "https://gateway.marvel.com:443/v1/public/";
-  const _apiKey = "apikey";
+  const _apiBase = 'https://gateway.marvel.com:443/v1/public/';
+  const _apiKey = 'apikey=c5d6fc8b83116d92ed468ce36bac6c62';
   const _baseOffset = 210;
 
   const getAllCharacters = async (offset = _baseOffset) => {
@@ -41,8 +41,8 @@ const useMarvelService = () => {
       name: char.name,
       description: char.description
         ? `${char.description.slice(0, 210)}...`
-        : "There is no description for this character",
-      thumbnail: char.thumbnail.path + "." + char.thumbnail.extension,
+        : 'There is no description for this character',
+      thumbnail: char.thumbnail.path + '.' + char.thumbnail.extension,
       homepage: char.urls[0].url,
       wiki: char.urls[1].url,
       comics: char.comics.items,
@@ -52,13 +52,13 @@ const useMarvelService = () => {
     return {
       id: comics.id,
       title: comics.title,
-      description: comics.description || "There is no description",
+      description: comics.description || 'There is no description',
       pageCount: comics.pageCount
         ? `${comics.pageCount} p.`
-        : "No information about the number of pages",
-      thumbnail: comics.thumbnail.path + "." + comics.thumbnail.extension,
-      language: comics.textObjects.language || "en-us",
-      price: comics.prices.price ? `${comics.prices.price}$` : "not available",
+        : 'No information about the number of pages',
+      thumbnail: comics.thumbnail.path + '.' + comics.thumbnail.extension,
+      language: comics.textObjects.language || 'en-us',
+      price: comics.prices.price ? `${comics.prices.price}$` : 'not available',
     };
   };
 

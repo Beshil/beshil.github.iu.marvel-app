@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "formik": "^2.2.9",
+    "gh-pages": "^6.1.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -18,6 +19,8 @@
     "yup": "^0.32.11"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,5 +47,5 @@
   "devDependencies": {
     "sass": "^1.38.0"
   },
-    "homepage": "https://beshil.github.io/marvel-app",
+  "homepage": "https://beshil.github.io/marvel-app"
 }
